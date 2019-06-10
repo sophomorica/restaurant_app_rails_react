@@ -14,6 +14,7 @@ class MenuStuff extends React.Component{
     })
   }
   addItem = (name,price, menu_id)=>{
+    debugger
     axios.post(`/api/menus/${menu_id}/items`,{name, price}) 
       .then( res =>{
         const {items} = this.state
@@ -53,7 +54,7 @@ class MenuStuff extends React.Component{
           <div>
             <Header as="h2">{this.props.name}</Header>
           </div>
-          <ItemsForm />
+          <ItemsForm addItem = {this.addItem} />
           <ItemList  
           items={this.state.items}
           update={this.updateItem}

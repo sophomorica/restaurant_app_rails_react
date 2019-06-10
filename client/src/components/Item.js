@@ -1,5 +1,5 @@
 import React from "react"
-import { Checkbox, Header, Button, Icon } from "semantic-ui-react"
+import {  Header, Button, Icon } from "semantic-ui-react"
 
 const Item =({id, price, name, updateItem, deleteItem})=>(
   <div style={styles.flex}>

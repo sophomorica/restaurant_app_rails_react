@@ -1,18 +1,18 @@
 import React from 'react';
 import {Form, } from "semantic-ui-react"
 
-class ItemForm extends React.Component{
+class ItemsForm extends React.Component{
 
   state = {name:"", price:""}
   
   handleChange = (e) => {
-    this.setState({ name: e.target.value, price: e.target.value });
+    this.setState({[e.target.name]: [e.target.value]});
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     const {name, price} = this.state
-    this.props.add(name, price);
+    this.props.addItem(name, price);
     this.setState({ name: "", price: "" });
   }
 
@@ -22,23 +22,28 @@ class ItemForm extends React.Component{
       <>
       <Form onSubmit={this.handleSubmit}>
         <Form.Input 
+        fluid
+        name= "name"
         label="Menu Item"
         placeholder = "Add Menu Item"
         required
         value={this.state.name}
         onChange={this.handleChange}
         />
-        <Form.Input 
+        <Form.Input
+        fluid 
+        name = "price"
         label="Menu Price"
-        placeholder = "Add Menu Price"
+        placeholder = "Price"
         required
         value={this.state.price}
         onChange={this.handleChange}
         />
+        
       </Form>
       </>
     )
   }
 }
 
-export default ItemForm
+export default ItemsForm
