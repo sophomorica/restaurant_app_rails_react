@@ -6,7 +6,7 @@ class ItemsForm extends React.Component{
   state = {name:"", price:""}
   
   handleChange = (e) => {
-    this.setState({[e.target.name]: [e.target.value]});
+    this.setState({[e.target.name]: e.target.value});
   }
 
   handleSubmit = (e) => {
