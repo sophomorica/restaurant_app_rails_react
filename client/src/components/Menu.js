@@ -1,5 +1,7 @@
 import React from "react"
 import { Checkbox, Header, Button, Icon, Card } from "semantic-ui-react"
+import ItemsForm from "./ItemsForm"
+import ItemList from "./ItemList"
 
 const Menu = ({id, name, update, deleteMenu}) =>(
   <Card>
@@ -12,6 +14,8 @@ const Menu = ({id, name, update, deleteMenu}) =>(
       <div>
         <Header as="h2">{name}</Header>
       </div>
+      <ItemsForm />
+      <ItemList />
     </div>
     <Button 
     icon

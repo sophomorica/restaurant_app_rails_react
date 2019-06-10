@@ -41,6 +41,19 @@ class App extends React.Component{
       this.setState({menus})
     })
   }
+  updateItem = (id) =>{
+    // api put request
+    // set state
+    axios.put(`/api/items/${id}`)
+    .then( res =>{
+      const menus = this.state.menus.map(m=>{
+        if(m.id ===id)
+        return res.data
+        return m
+      })
+      this.setState({menus})
+    })
+  }
   deleteMenu = (id) =>{
     // make api delete request
     // set state
