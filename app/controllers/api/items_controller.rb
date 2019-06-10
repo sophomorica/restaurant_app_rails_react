@@ -16,7 +16,7 @@ class Api::ItemsController < ApplicationController
 
   def update
     item = @menu.items.find(params[:id])
-    item.update
+    item.update(item_params)
     render json: item
   end
 
