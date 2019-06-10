@@ -13,7 +13,7 @@ class ItemsForm extends React.Component{
     e.preventDefault();
     const {name, price} = this.state
     this.props.addItem(name, price);
-    this.setState({ name: "", price: "" });
+    this.setState({ name: "", price: "" , });
   }
 
   render(){
@@ -35,11 +35,10 @@ class ItemsForm extends React.Component{
         name = "price"
         label="Menu Price"
         placeholder = "Price"
-        required
         value={this.state.price}
         onChange={this.handleChange}
         />
-        
+        <Form.Button>Submit</Form.Button>
       </Form>
       </>
     )
