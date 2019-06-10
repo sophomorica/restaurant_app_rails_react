@@ -1,12 +1,13 @@
 class Api::ItemsController < ApplicationController
+  before_action :set_menu
   def index
     item = Item.all
   end
 
   def create
-    item = Item.new(item_params)
+    item = @menu.items.new(item_params)
     if item.save
-      render json: item
+      render json: @menu
     else
       render json: { errors: item.errors }, status: :unprocessable_entity 
     end
@@ -26,6 +27,9 @@ class Api::ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :complete)
+    params.require(:item).permit(:name, :price)
+  end
+  def set_menu
+    @menu = Menu.find(params[:menu_id])
   end
 end
