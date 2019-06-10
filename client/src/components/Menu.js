@@ -1,11 +1,12 @@
 import React from "react"
-import { Checkbox, Header, Button, Icon } from "semantic-ui-react"
+import { Checkbox, Header, Button, Icon, Card } from "semantic-ui-react"
 
 const Menu = ({id, name, update, deleteMenu}) =>(
+  <Card>
+
   <div style={styles.flex}>
     <div style={styles.flex}>
       <Checkbox 
-      
       
       />
       <div>
@@ -22,6 +23,7 @@ const Menu = ({id, name, update, deleteMenu}) =>(
     </Button>
 
   </div>
+    </Card>
 )
 const styles = {
   complete:{
