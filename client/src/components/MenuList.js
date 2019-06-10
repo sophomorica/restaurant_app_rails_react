@@ -1,11 +1,11 @@
 import React from 'react'
-import Menu from './Menu'
+import MenuStuff from './MenuStuff'
 
 const MenuList = ({menus, update, deleteMenu}) =>(
 
   <div>
     {menus.map(menu =>
-    <Menu 
+    <MenuStuff 
     key={menu.id}
     {...menu}
     update = {update}

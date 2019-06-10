@@ -4,8 +4,7 @@ import { Checkbox, Header, Button, Icon } from "semantic-ui-react"
 const Item =({id, price, name, updateItem, deleteItem})=>(
   <div style={styles.flex}>
     <div style={styles.flex}>
-      <Checkbox
-      />
+     {price}
       <div>
         <Header as="h2" style ={{marginLeft: "15px"}}>{ name }</Header>
       </div>

@@ -1,7 +1,9 @@
 import React from 'react';
 import Item from './Item'
 
-const ItemList = ({items, deleteItem, updateItem}) => (
+const ItemList = ({items, updateItem, deleteItem}) =>(
+
+
   <div>
   {items.map(item =>
     <Item
