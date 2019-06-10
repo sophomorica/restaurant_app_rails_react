@@ -3,47 +3,45 @@ import { Checkbox, Header, Button, Icon, Card } from "semantic-ui-react"
 import ItemsForm from "./ItemsForm"
 import ItemList from "./ItemList"
 
-const Menu = ({id, name, update, deleteMenu}) =>(
-  <Card>
 
-  <div style={styles.flex}>
-    <div style={styles.flex}>
-      <Checkbox 
-      
-      />
-      <div>
-        <Header as="h2">{name}</Header>
-      </div>
-      <ItemsForm />
-      <ItemList />
+class Menu extends React.Component{
+  state = {items: [{id: 1, name:"salad", price: "$5"}],}
+  render(){
+    return(
+<Card>
+
+<div>
+  <div>
+    <Checkbox 
+    
+    />
+    <div>
+      <Header as="h2">{this.props.name}</Header>
     </div>
-    <Button 
-    icon
-    color="red"
-    size = "small"
-    onClick={()=> deleteMenu(id)}
-    >
-    <Icon name= "trash"/>      
-    </Button>
-
+    <ItemsForm />
+    <ItemList  
+     items={this.state.items}
+     update={this.updateItem}
+     deleteMenu={this.deleteItem}
+    />
   </div>
-    </Card>
-)
-const styles = {
-  complete:{
-    textDecoration: "line-through",
-    color: "orange"
-  },
-  pointer:{
-    cursor: "pointer",
-  },
-  flex: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between"
-  }
+  <Button 
+  icon
+  color="red"
+  size = "small"
+  onClick={()=> this.props.deleteMenu(this.props.id)}
+  >
+  <Icon name= "trash"/>      
+  </Button>
 
+</div>
+  </Card>
+
+    )
+  }
 }
+
+
 
 
 export default Menu

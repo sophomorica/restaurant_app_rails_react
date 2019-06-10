@@ -67,7 +67,7 @@ class App extends React.Component{
     return(
       <>
       <Container>
-        <Header as="h1" style={{textAlign:"center"}}>Pat's Bistro</Header>
+        <Header as="h1" style={{textAlign:"center"}}>Pat's</Header>
         <br/>
         <MenuForm add = {this.addMenu}/>
         <br/>
