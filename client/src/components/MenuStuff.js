@@ -14,10 +14,8 @@ class MenuStuff extends React.Component{
     })
   }
   addItem = (name, price)=>{
-    debugger
     axios.post(`/api/menus/${this.props.id}/items`,{name, price}) 
       .then( res =>{
-        debugger
         const {items} = this.state
         this.setState({items: [...items, res.data]})
       })
